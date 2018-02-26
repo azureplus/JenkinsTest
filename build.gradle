@@ -20,7 +20,6 @@ allprojects {
         google()
         jcenter()
     }
-    buildDir = "D:/tmp/${rootProject.name}/${project.name}"
 }
 
 task clean(type: Delete) {

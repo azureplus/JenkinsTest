@@ -16,6 +16,7 @@ android {
     aaptOptions.useNewCruncher = false
     buildTypes {
         release {
+            shrinkResources true //去除无用的资源
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
