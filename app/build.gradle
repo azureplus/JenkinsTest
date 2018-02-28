@@ -1,6 +1,16 @@
 apply plugin: 'com.android.application'
+apply plugin: 'walle'
 
 android {
+    signingConfigs {
+        sign {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('kaleidoscope.jks')
+            storePassword 'r66086729'
+            //v2SigningEnabled false  //作用是只使用旧版签名，禁用V2版签名模式
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.renny.jenkinstest"
@@ -15,8 +25,13 @@ android {
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
     buildTypes {
+        debug {
+            signingConfig signingConfigs.sign
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            shrinkResources true //去除无用的资源
+            signingConfig signingConfigs.sign
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -30,6 +45,26 @@ android {
     }
 }
 
+walle {
+    // 指定渠道包的输出路径
+    apkOutputFolder = new File("${project.buildDir}/outputs/channels")
+    // 定制渠道包的APK的文件名称
+    apkFileNameFormat = '${appName}-${packageName}-${channel}-${buildType}-v${versionName}-${versionCode}-${buildTime}.apk'
+    // 渠道配置文件
+    channelFile = new File("${project.projectDir}/channel")
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.0.2'
@@ -38,4 +73,5 @@ dependencies {
     implementation 'com.android.support:multidex:1.0.1'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.meituan.android.walle:library:1.1.6'
 }
