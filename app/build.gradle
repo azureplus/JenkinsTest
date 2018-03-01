@@ -11,19 +11,17 @@ android {
             //v2SigningEnabled false  //作用是只使用旧版签名，禁用V2版签名模式
         }
     }
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
         applicationId "com.renny.jenkinstest"
-        minSdkVersion 17
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-        //Enabling multidex support.
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    aaptOptions.cruncherEnabled = false
-    aaptOptions.useNewCruncher = false
     buildTypes {
         debug {
             signingConfig signingConfigs.sign
