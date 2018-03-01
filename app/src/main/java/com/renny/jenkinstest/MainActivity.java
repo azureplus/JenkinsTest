@@ -16,6 +16,6 @@ public class MainActivity extends AppCompatActivity {
         String channel = WalleChannelReader.getChannel(this.getApplicationContext());
 
         TextView textView=findViewById(R.id.text);
-        textView.setText("channel"+channel);
+        textView.setText("channel=="+channel+"\n"+"website=="+BuildConfig.CONFIG_ENDPOINT);
     }
 }

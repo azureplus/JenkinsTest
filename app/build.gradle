@@ -36,6 +36,30 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions( "member","channel")
+    productFlavors {
+
+        baidu {
+            buildConfigField "String", "CONFIG_ENDPOINT", "\"www.baidu.com\""
+            dimension "channel"
+        }
+
+        xiaomi {
+            buildConfigField "String", "CONFIG_ENDPOINT", "\"www.mi.com\""
+            dimension "channel"
+        }
+
+        vip {
+            applicationId "com.example.branchTwo"
+            dimension "member"
+        }
+
+        free{
+            applicationId "com.example.branchOne"
+            dimension "member"
+        }
+    }
     lintOptions {
         abortOnError false
     }
