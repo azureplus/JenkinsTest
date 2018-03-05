@@ -12,10 +12,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         String channel = WalleChannelReader.getChannel(this.getApplicationContext());
-
         TextView textView=findViewById(R.id.text);
-        textView.setText("channel=="+channel+"\n"+"website=="+BuildConfig.CONFIG_ENDPOINT);
+        textView.setText("channel=="+channel);
     }
 }

@@ -6,7 +6,7 @@ android {
         sign {
             keyAlias 'key0'
             keyPassword '123456'
-            storeFile file('kaleidoscope.jks')
+            storeFile file('../tool_output/kaleidoscope.jks')
             storePassword 'r66086729'
             //v2SigningEnabled false  //作用是只使用旧版签名，禁用V2版签名模式
         }
