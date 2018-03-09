@@ -8,7 +8,6 @@ android {
             keyPassword '123456'
             storeFile file('../tool_output/kaleidoscope.jks')
             storePassword 'r66086729'
-            //v2SigningEnabled false  //作用是只使用旧版签名，禁用V2版签名模式
         }
     }
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -35,29 +34,19 @@ android {
         }
     }
 
-    flavorDimensions( "member","channel")
+    flavorDimensions 'aym'
     productFlavors {
 
-        baidu {
+        ceshi {
             buildConfigField "String", "CONFIG_ENDPOINT", "\"www.baidu.com\""
-            dimension "channel"
         }
 
-        xiaomi {
+        publish {
             buildConfigField "String", "CONFIG_ENDPOINT", "\"www.mi.com\""
-            dimension "channel"
-        }
 
-        vip {
-            applicationId "com.example.branchTwo"
-            dimension "member"
-        }
-
-        free{
-            applicationId "com.example.branchOne"
-            dimension "member"
         }
     }
+
     lintOptions {
         abortOnError false
     }
