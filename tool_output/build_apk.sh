@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -jar AndResGuard-cli-1.2.10.jar input.apk -config config.xml -out outapk -signatureType v2
+java -jar AndResGuard-cli-1.2.12-DEBUG.jar ../app/build/outputs/apk/*/*/*.apk -config config.xml -out outapk -signatureType v2 -signature aixuedaisign.jks Axd2015 Axd2015 aixuedai

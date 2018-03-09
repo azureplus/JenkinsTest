@@ -4,10 +4,10 @@ apply plugin: 'walle'
 android {
     signingConfigs {
         sign {
-            keyAlias 'key0'
-            keyPassword '123456'
-            storeFile file('../tool_output/kaleidoscope.jks')
-            storePassword 'r66086729'
+            keyAlias 'aixuedai'
+            keyPassword 'Axd2015'
+            storePassword 'Axd2015'
+            storeFile file('../tool_output/aixuedaisign.jks')
         }
     }
     compileSdkVersion rootProject.ext.compileSdkVersion

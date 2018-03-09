@@ -63,11 +63,11 @@
         <!--the signature file path, in window use \, in linux use /, and the default path is the running location-->
         <path value="kaleidoscope.jks"/>
         <!--storepass-->
-        <storepass value="r66086729"/>
+        <storepass value="Axd2015"/>
         <!--keypass-->
-        <keypass value="123456"/>
+        <keypass value="Axd2015"/>
         <!--alias-->
-        <alias value="key0"/>
+        <alias value="aixuedai"/>
     </issue>
 
 </resproguard>
