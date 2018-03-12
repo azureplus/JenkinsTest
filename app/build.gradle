@@ -4,9 +4,9 @@ apply plugin: 'walle'
 android {
     signingConfigs {
         sign {
-            keyAlias 'aixuedai'
-            keyPassword 'Axd2015'
-            storePassword 'Axd2015'
+            keyAlias 'zxx'
+            keyPassword 'xx'
+            storePassword 'xxxx'
             storeFile file('../tool_output/aixuedaisign.jks')
         }
     }

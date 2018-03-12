@@ -59,15 +59,6 @@
     <!--sign, if you want to sign the apk, and if you want to use 7zip, you must fill in the following data-->
     <!--isactive, whether to use sign, you can set false to close it simply-->
     <!--if you use -signature to set sign property in cammand line, these setting will be overlayed-->
-    <issue id="sign" isactive="true">
-        <!--the signature file path, in window use \, in linux use /, and the default path is the running location-->
-        <path value="kaleidoscope.jks"/>
-        <!--storepass-->
-        <storepass value="Axd2015"/>
-        <!--keypass-->
-        <keypass value="Axd2015"/>
-        <!--alias-->
-        <alias value="aixuedai"/>
-    </issue>
+
 
 </resproguard>
