@@ -4,9 +4,9 @@ apply plugin: 'walle'
 android {
     signingConfigs {
         sign {
-            keyAlias 'zxx'
-            keyPassword 'xx'
-            storePassword 'xxxx'
+            keyAlias 'aixuedai'
+            keyPassword 'Axd2015'
+            storePassword 'Axd2015'
             storeFile file('../tool_output/aixuedaisign.jks')
         }
     }
@@ -24,7 +24,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.sign
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
